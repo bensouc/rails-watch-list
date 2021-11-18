@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>My lists</h1>
+  <div>
+    <ul>
+    <% @lists.each do |list| %>
+      <li>
+      <%= link_to list.name, list_path(list), class:'fs-4 text-dark' %>
+      <%= link_to list_path(list),
+      method: :delete,
+      data: { confirm: "Are you sure?" } do %>
+      <i class="fas fa-minus-square"></i>
+      <%end%>
+      </li>
+      <%# <%= link_to list_path(list)%>
+    <%end%>
+    </ul>
+  </div>
+  <div class='d-flex'>
+    <%= link_to 'Add list', new_list_path, class:'btn btn-primary btn-sm m-3'%>
+  </div>
+</div>
