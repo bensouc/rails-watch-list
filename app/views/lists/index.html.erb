@@ -2,7 +2,8 @@
   <h1>My lists</h1>
   <div>
     <% @lists.each do |list| %>
-    <div class="card-category d-flex justify-content-around " style="background-image: url('<%= cl_image_path list.photo.key, height: 300, width: 400, crop: :fill%>')" >
+    <div class="card-category d-flex justify-content-around ">
+      <%= cl_image_tag list.photo.key, width: 400, height: 300, crop: :fill %>
       <%= link_to list.name, list_path(list), class:'fs-4 text-white' %>
       <%= link_to list_path(list),
       method: :delete,
