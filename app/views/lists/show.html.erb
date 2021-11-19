@@ -18,7 +18,8 @@
       <div class="card-body">
         <h4 class="card-title border-bottom " style="height: 4rem" ><%=movie.title%></h4>
          <p class="card-text "><%=movie.overview%></p>
-        <%= link_to 'Remove from the list', list_bookmark_path(movie.bookmark_ids),
+
+        <%= link_to 'Remove from the list', list_bookmark_path(@list,movie),
         method: :delete,
         class:'btn btn-primary btn-sm m-3'%>
       </div>

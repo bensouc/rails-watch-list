@@ -19,13 +19,13 @@ puts 'seeds destroyed'
 puts 'parsing'
 
 movie_serialized = URI.open(url).read
-movie = JSON.parse(movie_serialized)["results"]
+movies = JSON.parse(movie_serialized)["results"]
 
 puts 'parsed'
 
 puts 'creating movies'
 
-movie.each do |movie|
+movies.each do |movie|
   Movie.create(title: movie['title'],
     overview: movie['overview'],
     poster_url: "https://image.tmdb.org/t/p/original/#{movie['poster_path']}",

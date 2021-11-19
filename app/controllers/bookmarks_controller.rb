@@ -21,7 +21,8 @@ class BookmarksController < ApplicationController
 
   def destroy
     @list = List.find(params[:list_id])
-    @bookmark = Bookmark.find(params[:id])
+    @movie = Movie.find(params[:id])
+    @bookmark = Bookmark.where({ movie: @movie, list: @list }).first
     @bookmark.destroy
 
     redirect_to list_path(@list)
