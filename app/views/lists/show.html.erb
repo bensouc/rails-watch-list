@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%=@list.name %></h1>
+  <h1 class='banner-list'style="background-image: url('<%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill%>')"><%=@list.name %></h1>
 
 
   <div class="full-list d-flex flex-column">

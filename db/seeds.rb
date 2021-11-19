@@ -6,11 +6,7 @@ Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal masterm
 require 'json'
 require 'open-uri'
 
-url = 'http://tmdb.lewagon.com/movie/top_rated?api_key=<your_api_key>'
-
-movie_serialized = URI.open(url).read
-movie = JSON.parse(movie_serialized)["results"]
-
+# url = 'http://tmdb.lewagon.com/movie/top_rated?api_key=<your_api_key>'
 
 url = 'http://tmdb.lewagon.com/movie/top_rated?api_key=<your_api_key>'
 
